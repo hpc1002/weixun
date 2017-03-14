@@ -41,11 +41,11 @@ public class DataBeanDao extends AbstractDao<Article, String> {
     @Override
     protected Article readEntity(Cursor cursor, int offset) {
         Article entity = new Article(
-                cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0),
-                cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1),
-                cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2),
-                cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3),
-                cursor.isNull(offset + 4) ? null : cursor.getLong(offset + 4),
+                cursor.isNull(offset + 4) ? null : cursor.getLong(offset + 0),
+                cursor.isNull(offset + 0) ? null : cursor.getString(offset + 1),
+                cursor.isNull(offset + 1) ? null : cursor.getString(offset + 2),
+                cursor.isNull(offset + 2) ? null : cursor.getString(offset + 3),
+                cursor.isNull(offset + 3) ? null : cursor.getString(offset + 4),
                 cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5)
 
         );

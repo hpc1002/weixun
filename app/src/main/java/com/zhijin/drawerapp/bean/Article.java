@@ -6,16 +6,18 @@ import java.io.Serializable;
  * Created by hpc on 2017/3/8.
  */
 
-public class Article implements Serializable{
+public class Article implements Serializable {
     public Long id;
     public String title;
     public String source;
     public String firstImg;
     public String mark;
     public String url;
+
     public Article() {
     }
-    public Article(String firstImg, String url, String source, String mark, Long id, String title) {
+
+    public Article(Long id, String title, String source, String firstImg, String mark, String url) {
         this.firstImg = firstImg;
         this.url = url;
         this.source = source;

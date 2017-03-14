@@ -14,7 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.zhijin.drawerapp.bean.Article;
+import com.zhijin.drawerapp.dao.DbCore;
 import com.zhijin.drawerapp.fragmentController.FragmentController;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -112,9 +116,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Toast.makeText(this, "Tools", Toast.LENGTH_SHORT).show();
             toolbar.setTitle("Tools");
+        } else if (id == R.id.nav_my_collect) {
+            toolbar.setTitle("我的收藏");
+            controller.showFragment(3);
         } else if (id == R.id.nav_share) {
-            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
             toolbar.setTitle("Share");
+
         } else if (id == R.id.nav_send) {
             Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
             toolbar.setTitle("Send");

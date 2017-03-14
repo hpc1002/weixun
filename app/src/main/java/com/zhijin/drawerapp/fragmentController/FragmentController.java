@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.zhijin.drawerapp.collect.CollectFragment;
 import com.zhijin.drawerapp.gallery.GalleryFragment;
 import com.zhijin.drawerapp.home.HomeFragment;
 import com.zhijin.drawerapp.liveVideo.LiveListFragment;
@@ -43,6 +44,7 @@ public class FragmentController {
         fragments.add(new HomeFragment());
         fragments.add(new GalleryFragment());
         fragments.add(new LiveListFragment());
+        fragments.add(new CollectFragment());
         fragments.add(new SettingFragment());
 
         FragmentTransaction ft = fm.beginTransaction();
