@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">微视讯</string>
+    <string name="navigation_drawer_open">打开抽屉</string>
+    <string name="navigation_drawer_close">关闭抽屉</string>
+
+    <string name="action_settings">设置</string>
+    <string name="action_help">帮助</string>
+    <string name="action_share_friend">分享给朋友</string>
+    <string name="action_share_circle">分享到朋友圈</string>
+    <string name="action_collect">收藏</string>
+</resources>

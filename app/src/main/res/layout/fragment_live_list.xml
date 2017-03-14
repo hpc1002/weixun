@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity
+        android:id="@+id/live_list_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.xiaochao.lcrapiddeveloplibrary.widget.SpringView
+            android:id="@+id/live_list_springView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhijin.drawerapp.widget.MyScrollview
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/live_video_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+            </com.zhijin.drawerapp.widget.MyScrollview>
+
+        </com.xiaochao.lcrapiddeveloplibrary.widget.SpringView>
+    </com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity>
+</LinearLayout>

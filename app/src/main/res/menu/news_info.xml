@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_share_friend"
+        android:orderInCategory="100"
+        android:title="@string/action_share_friend"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_share_circle"
+        android:orderInCategory="100"
+        android:title="@string/action_share_circle"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_collect"
+        android:orderInCategory="100"
+        android:title="@string/action_collect"
+        app:showAsAction="never" />
+</menu>
