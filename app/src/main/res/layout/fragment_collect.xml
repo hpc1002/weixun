@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <!--<com.jude.easyrecyclerview.EasyRecyclerView-->
+    <!--android:id="@+id/recyclerview_collect"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_empty="@layout/view_empty"-->
+    <!--app:layout_progress="@layout/view_progress"-->
+    <!--app:scrollbarStyle="insideOverlay" />-->
 
-    <com.jude.easyrecyclerview.EasyRecyclerView
-        android:id="@+id/recyclerview_collect"
+    <com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity
+        android:id="@+id/progress"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_empty="@layout/view_empty"
-        app:layout_progress="@layout/view_progress"
-        app:scrollbarStyle="insideOverlay" />
+        android:layout_height="match_parent">
+
+        <com.xiaochao.lcrapiddeveloplibrary.widget.SpringView
+            android:id="@+id/collect_springview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_collect"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.xiaochao.lcrapiddeveloplibrary.widget.SpringView>
+    </com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity>
 </LinearLayout>

@@ -1,13 +1,18 @@
 package com.zhijin.drawerapp.collect;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.xiaochao.lcrapiddeveloplibrary.BaseQuickAdapter;
+import com.xiaochao.lcrapiddeveloplibrary.container.DefaultFooter;
+import com.xiaochao.lcrapiddeveloplibrary.container.DefaultHeader;
+import com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity;
+import com.xiaochao.lcrapiddeveloplibrary.widget.SpringView;
 import com.zhijin.drawerapp.ArticleInfo.ArticleInfoActivity;
 import com.zhijin.drawerapp.R;
 import com.zhijin.drawerapp.adapter.ArticleAdapter;
@@ -18,15 +23,20 @@ import com.zhijin.drawerapp.dao.DbCore;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by hpc on 2017/3/14.
  */
 
-public class CollectFragment extends BaseFragment {
+public class CollectFragment extends BaseFragment implements SpringView.OnFreshListener {
     DbCore mCore;
     @BindView(R.id.recyclerview_collect)
-    EasyRecyclerView recyclerviewCollect;
+    RecyclerView recyclerviewCollect;
+    @BindView(R.id.collect_springview)
+    SpringView collectSpringview;
+    @BindView(R.id.progress)
+    ProgressActivity progress;
     private ArticleAdapter articleAdapter;
 
     @Override
@@ -37,6 +47,8 @@ public class CollectFragment extends BaseFragment {
     @Override
     protected void initListener() {
         recyclerviewCollect.setLayoutManager(new LinearLayoutManager(getActivity()));
+        collectSpringview.setListener(this);
+        collectSpringview.setHeader(new DefaultHeader(getActivity()));
     }
 
     @Override
@@ -55,4 +67,13 @@ public class CollectFragment extends BaseFragment {
         recyclerviewCollect.setAdapter(articleAdapter);
     }
 
+    @Override
+    public void onRefresh() {
+        initData();
+    }
+
+    @Override
+    public void onLoadmore() {
+
+    }
 }
