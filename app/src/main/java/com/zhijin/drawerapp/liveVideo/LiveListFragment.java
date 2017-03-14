@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xiaochao.lcrapiddeveloplibrary.BaseQuickAdapter;
-import com.xiaochao.lcrapiddeveloplibrary.container.DefaultFooter;
 import com.xiaochao.lcrapiddeveloplibrary.container.DefaultHeader;
 import com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity;
 import com.xiaochao.lcrapiddeveloplibrary.widget.SpringView;
@@ -53,18 +52,12 @@ public class LiveListFragment extends BaseFragment implements SpringView.OnFresh
     @Override
     protected void initListener() {
         getLiveVideo();
-//        liveListSpringView.setListener(this);
-//        liveListSpringView.setFooter(new DefaultFooter(getContext()));
-//        liveListSpringView.setHeader(new DefaultHeader(getContext()));
+        liveListSpringView.setListener(this);
+        liveListSpringView.setHeader(new DefaultHeader(getContext()));
     }
 
     private void getLiveVideo() {
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
         new RequestLivingTask().execute(Constant.LIVE_VIDEO_URL);
-//            }
-//        },1000);
     }
 
     @Override
@@ -86,6 +79,7 @@ public class LiveListFragment extends BaseFragment implements SpringView.OnFresh
     @Override
     public void onRefresh() {
         getLiveVideo();
+        initData();
     }
 
     @Override
