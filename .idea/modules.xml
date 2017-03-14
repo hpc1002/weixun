@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DrawerApp.iml" filepath="$PROJECT_DIR$/DrawerApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lcrapiddeveloplibrary/lcrapiddeveloplibrary.iml" filepath="$PROJECT_DIR$/lcrapiddeveloplibrary/lcrapiddeveloplibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/playerview/playerview.iml" filepath="$PROJECT_DIR$/playerview/playerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixun.iml" filepath="$PROJECT_DIR$/weixun.iml" />
     </modules>
   </component>
 </project>

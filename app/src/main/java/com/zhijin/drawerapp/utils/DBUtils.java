@@ -38,8 +38,7 @@ public class DBUtils
         }
         if (isHave)
         {
-            return;
-//            mDBOperate.notifyFail();//您已经添加过磁条数据
+            mDBOperate.notifyFail();//您已经添加过磁条数据
         }else
         {
             mDao.insert(item);
