@@ -10,6 +10,7 @@ import com.zhijin.drawerapp.gallery.GalleryFragment;
 import com.zhijin.drawerapp.home.HomeFragment;
 import com.zhijin.drawerapp.liveVideo.LiveListFragment;
 import com.zhijin.drawerapp.setting.SettingFragment;
+import com.zhijin.drawerapp.share.ShareFragment;
 
 import java.util.ArrayList;
 
@@ -45,6 +46,7 @@ public class FragmentController {
         fragments.add(new GalleryFragment());
         fragments.add(new LiveListFragment());
         fragments.add(new CollectFragment());
+        fragments.add(new ShareFragment());
         fragments.add(new SettingFragment());
 
         FragmentTransaction ft = fm.beginTransaction();

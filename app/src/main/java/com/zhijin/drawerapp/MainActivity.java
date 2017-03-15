@@ -1,6 +1,8 @@
 package com.zhijin.drawerapp;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -9,16 +11,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.zhijin.drawerapp.bean.Article;
-import com.zhijin.drawerapp.dao.DbCore;
 import com.zhijin.drawerapp.fragmentController.FragmentController;
-
-import java.util.List;
+import com.zhijin.drawerapp.utils.ToastManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,14 +34,14 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,6 +65,33 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+    private boolean isBack = false;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == event.KEYCODE_BACK) {
+            if (!isBack) {
+                isBack = true;
+                ToastManager.show("再按一次退出");
+                myBackHandler.sendEmptyMessageDelayed(110, 3000);
+                return false;
+            } else {
+                finish();
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private Handler myBackHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.what == 110) {
+                isBack = false;
+            }
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,7 +148,7 @@ public class MainActivity extends AppCompatActivity
             controller.showFragment(3);
         } else if (id == R.id.nav_share) {
             toolbar.setTitle("Share");
-
+            controller.showFragment(4);
         } else if (id == R.id.nav_send) {
             Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
             toolbar.setTitle("Send");
