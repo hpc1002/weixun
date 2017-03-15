@@ -1,36 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="5dp"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:background="@color/gray"
     android:orientation="vertical">
-
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/ivPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/image_error"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+            <TextView
+                android:id="@+id/tvNameAndCity"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
 
-        <ImageView
-            android:id="@+id/ivPortrait"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher"/>
 
-        <TextView
-            android:id="@+id/tvNameAndCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#333333"
-            android:layout_alignBottom="@+id/ivPortrait"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="30dp"
-            android:textSize="16sp"
-            android:text="beijing liteng"
-            />
+            <TextView
+                android:id="@+id/tvNick"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
 
-    </RelativeLayout>
 
-</RelativeLayout>
+    </LinearLayout>
+    <!--<ImageView-->
+        <!--android:id="@+id/ivPortrait"-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="130dp"-->
+        <!--android:src="@mipmap/ic_launcher"/>-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="130dp"-->
+        <!--android:layout_height="30dp"-->
+       <!--&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/tvNameAndCity"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#333333"-->
+            <!--android:textSize="16sp"-->
+            <!--android:text="beijing liteng"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#333333"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="12132"/>-->
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/ivPortrait"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:src="@mipmap/ic_launcher"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvNameAndCity"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textColor="#333333"-->
+            <!--android:layout_alignBottom="@+id/ivPortrait"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:textSize="16sp"-->
+            <!--android:text="beijing liteng"-->
+            <!--/>-->
+
+    <!--</RelativeLayout>-->
+
+</LinearLayout>

@@ -62,7 +62,7 @@ public class LiveListFragment extends BaseFragment implements SpringView.OnFresh
 
     @Override
     protected void initData() {
-        liveVideoList.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        liveVideoList.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         mLivesList = new ArrayList<>();
         mAdapter = new LiveListAdapter(R.layout.item_live_video, mLivesList);
         liveVideoList.setAdapter(mAdapter);

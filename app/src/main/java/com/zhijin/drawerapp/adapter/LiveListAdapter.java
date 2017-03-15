@@ -22,13 +22,12 @@ public class LiveListAdapter extends BaseQuickAdapter<Lives> {
 
     @Override
     protected void convert(BaseViewHolder helper, Lives lives) {
-        helper.setText(R.id.tvNameAndCity, "来自" + lives.getCity() + "的" +
-                (TextUtils.isEmpty(lives.getName()) ? " 未起名 " : lives.getName())
-                + "距离您" + lives.getDistance());
+        helper.setText(R.id.tvNameAndCity, lives.getCity());
+        helper.setText(R.id.tvNick, lives.getCreator().getNick());
         Glide.with(mContext)
                 .load(lives.getCreator().getPortrait())
                 .centerCrop()
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.mipmap.nocover)
                 .crossFade()
                 .into((ImageView) helper.getView(R.id.ivPortrait));
 
