@@ -108,8 +108,8 @@ public class LiveListFragment extends BaseFragment implements SpringView.OnFresh
 
     @Override
     public void onRefresh() {
-
-        initData();
+        mAdapter.setNewData(getLiveVideo());
+        liveVideoList.setAdapter(mAdapter);
     }
 
     @Override

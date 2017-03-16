@@ -2,6 +2,7 @@ package com.zhijin.drawerapp.ArticleInfo;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.StrictMode;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -43,7 +44,7 @@ public class ArticleInfoActivity extends BaseActivity {
     ShowImageWebView webView;
     DBUtils mUtils;
     DbCore mCore;
-
+    private Bitmap scaledBitmap;
     //应用和程序id
     private IWXAPI api;
 
@@ -116,10 +117,14 @@ public class ArticleInfoActivity extends BaseActivity {
         WXMediaMessage msg = new WXMediaMessage(webpage);
         msg.title = datas.title;
         msg.description = datas.source;
-        //本地图片分享
-//        Bitmap thumb = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        //网络图片分享 微信分享缩略图（thumb）最大64KB 图片大小限制目前还存在小问题
-        Bitmap scaledBitmap = Bitmap.createScaledBitmap(BitmapUtil.GetLocalOrNetBitmap(datas.getFirstImg()), 100, 100, true);
+        if (datas.getFirstImg().isEmpty()) {
+            //本地图片分享
+            scaledBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        } else {
+            //网络图片分享 微信分享缩略图（thumb）最大64KB 图片大小限制目前还存在小问题
+            scaledBitmap = Bitmap.createScaledBitmap(BitmapUtil.GetLocalOrNetBitmap(datas.getFirstImg()), 100, 100, true);
+        }
+
         msg.thumbData = bmpToByteArray(scaledBitmap, true);
         //创建 SendMessageToWX.Req
         SendMessageToWX.Req req = new SendMessageToWX.Req();

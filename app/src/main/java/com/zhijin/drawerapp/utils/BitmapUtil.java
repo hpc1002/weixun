@@ -63,6 +63,9 @@ public class BitmapUtil {
         Bitmap bitmap = null;
         InputStream in = null;
         BufferedOutputStream out = null;
+        if(url.isEmpty()){
+            return null;
+        }
         try {
             in = new BufferedInputStream(new URL(url).openStream(), 1024);
             final ByteArrayOutputStream dataStream = new ByteArrayOutputStream();
