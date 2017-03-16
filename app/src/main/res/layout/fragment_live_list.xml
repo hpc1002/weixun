@@ -13,10 +13,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.zhijin.drawerapp.widget.MyScrollview
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none">
+            <!--<com.zhijin.drawerapp.widget.MyScrollview-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:scrollbars="none">-->
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/live_video_list"
@@ -24,7 +24,7 @@
                     android:layout_height="match_parent">
 
                 </android.support.v7.widget.RecyclerView>
-            </com.zhijin.drawerapp.widget.MyScrollview>
+            <!--</com.zhijin.drawerapp.widget.MyScrollview>-->
 
         </com.xiaochao.lcrapiddeveloplibrary.widget.SpringView>
     </com.xiaochao.lcrapiddeveloplibrary.viewtype.ProgressActivity>

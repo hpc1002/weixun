@@ -75,4 +75,7 @@
     <color name="grey">#8B8989</color>
     <color name="parent_dialog_bg">#EDEDED</color>
     <color name="startcolor">#21b38a</color>
+
+    <color name="no_press_text">#8cceed</color>
+    <color name="press_text">#22b8ee</color>
 </resources>

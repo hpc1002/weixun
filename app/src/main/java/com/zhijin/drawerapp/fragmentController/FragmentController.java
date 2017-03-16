@@ -9,6 +9,7 @@ import com.zhijin.drawerapp.collect.CollectFragment;
 import com.zhijin.drawerapp.gallery.GalleryFragment;
 import com.zhijin.drawerapp.home.HomeFragment;
 import com.zhijin.drawerapp.liveVideo.LiveListFragment;
+import com.zhijin.drawerapp.send.SendFragment;
 import com.zhijin.drawerapp.setting.SettingFragment;
 import com.zhijin.drawerapp.share.ShareFragment;
 
@@ -47,6 +48,7 @@ public class FragmentController {
         fragments.add(new LiveListFragment());
         fragments.add(new CollectFragment());
         fragments.add(new ShareFragment());
+        fragments.add(new SendFragment());
         fragments.add(new SettingFragment());
 
         FragmentTransaction ft = fm.beginTransaction();

@@ -3,9 +3,7 @@ package com.zhijin.drawerapp;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.zhijin.drawerapp.fragmentController.FragmentController;
@@ -135,14 +132,14 @@ public class MainActivity extends AppCompatActivity
             toolbar.setTitle("主页");
             controller.showFragment(0);
         } else if (id == R.id.nav_gallery) {
-            toolbar.setTitle("Gallery");
+            toolbar.setTitle("画廊");
             controller.showFragment(1);
         } else if (id == R.id.nav_slideshow) {
             toolbar.setTitle("直播秀");
             controller.showFragment(2);
         } else if (id == R.id.nav_manage) {
             Toast.makeText(this, "Tools", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle("Tools");
+            toolbar.setTitle("设置");
         } else if (id == R.id.nav_my_collect) {
             toolbar.setTitle("我的收藏");
             controller.showFragment(3);
@@ -150,8 +147,8 @@ public class MainActivity extends AppCompatActivity
             toolbar.setTitle("Share");
             controller.showFragment(4);
         } else if (id == R.id.nav_send) {
-            Toast.makeText(this, "Send", Toast.LENGTH_SHORT).show();
-            toolbar.setTitle("Send");
+            toolbar.setTitle("问题反馈");
+            controller.showFragment(5);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

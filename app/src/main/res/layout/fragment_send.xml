@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#f4f1f1"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/idea_mesasge_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="你好，请描述你遇到的问题..."
+        android:gravity="start"
+        android:padding="5dp"
+        android:lines="7"
+        android:background="#ffffff"
+        />
+
+    <EditText
+        android:id="@+id/idea_number"
+        android:background="#ffffff"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="选填:手机/QQ/邮箱"
+        android:paddingLeft="5dp"
+        android:lines="1"
+        android:layout_below="@+id/idea_mesasge_edit"
+        android:inputType="number"
+        />
+
+    <TextView
+        android:id="@+id/idea_sendtext"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/idea_number"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="发送"
+        android:gravity="center"
+        android:background="@drawable/sendidea_select"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+</RelativeLayout>
